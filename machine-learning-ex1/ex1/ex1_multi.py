@@ -26,6 +26,7 @@ print('Normalizing Features ...')
 X, mu, sigma = feature_normalize(X)
 X = np.c_[np.ones(m), X]  # Add a column of ones to X
 
+
 # ===================== Part 2: Gradient Descent =====================
 
 # ===================== Your Code Here =====================
@@ -62,6 +63,7 @@ plt.figure()
 plt.plot(np.arange(J_history.size), J_history)
 plt.xlabel('Number of iterations')
 plt.ylabel('Cost J')
+plt.pause(0.5)
 
 # Display gradient descent's result
 print('Theta computed from gradient descent : \n{}'.format(theta))
@@ -70,7 +72,7 @@ print('Theta computed from gradient descent : \n{}'.format(theta))
 # ===================== Your Code Here =====================
 # Recall that the first column of X is all-ones. Thus, it does
 # not need to be normalized.
-price = 0  # You should change this
+price = 1*theta[0]+np.dot((np.array([1650,3])-mu)/sigma,np.array([theta[1],theta[2]]).T)  # You should change this
 
 
 # ==========================================================
@@ -109,7 +111,7 @@ print('Theta computed from the normal equations : \n{}'.format(theta))
 
 # Estimate the price of a 1650 sq-ft, 3 br house
 # ===================== Your Code Here =====================
-price = 0  # You should change this
+price = np.dot(theta,np.array([1,1650,3]))  # You should change this
 
 
 # ==========================================================

@@ -23,6 +23,7 @@ input('Program paused. Press ENTER to continue')
 print('Running Gradient Descent...')
 
 X = np.c_[np.ones(m), X]  # Add a column of ones to X
+
 theta = np.zeros(2)  # initialize fitting parameters
 
 # Some gradient descent settings
@@ -40,6 +41,7 @@ print('Theta found by gradient descent: ' + str(theta.reshape(2)))
 plt.figure(0)
 line1, = plt.plot(X[:, 1], np.dot(X, theta), label='Linear Regression')
 plt.legend(handles=[line1])
+plt.pause(0.5)
 
 input('Program paused. Press ENTER to continue')
 
@@ -78,5 +80,8 @@ plt.figure(2)
 lvls = np.logspace(-2, 3, 20)
 plt.contour(xs, ys, J_vals, levels=lvls, norm=LogNorm())
 plt.plot(theta[0], theta[1], c='r', marker="x")
+plt.pause(0.5)
+plt.ioff()
+
 
 input('ex1 Finished. Press ENTER to exit')

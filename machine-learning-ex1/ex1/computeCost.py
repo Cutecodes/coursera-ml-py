@@ -12,5 +12,5 @@ def compute_cost(X, y, theta):
     
 
     # ==========================================================
-
+    cost = np.sum((np.dot(X,theta)-y)**2)/m/2
     return cost
