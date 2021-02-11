@@ -16,5 +16,9 @@ def cost_function(theta, X, y):
 
 
     # ===========================================================
+    z= np.dot(X,theta)
+    cost = np.sum(-y*np.log(sigmoid(z))-(1-y)*np.log(1-sigmoid(z)))/m
+    dt = sigmoid(z)-y
+    grad = np.sum(X*np.array([dt,dt,dt]).T,axis=0)/m
 
     return cost, grad

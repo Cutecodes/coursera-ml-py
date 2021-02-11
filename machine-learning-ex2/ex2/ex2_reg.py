@@ -19,6 +19,7 @@ plot_data(X, y)
 plt.xlabel('Microchip Test 1')
 plt.ylabel('Microchip Test 2')
 plt.legend(['y = 1', 'y = 0'])
+plt.pause(0.5)
 
 input('Program paused. Press ENTER to continue')
 
@@ -99,6 +100,7 @@ plt.title('lambda = {}'.format(lmd))
 
 plt.xlabel('Microchip Test 1')
 plt.ylabel('Microchip Test 2')
+plt.pause(0.4)
 
 # Compute accuracy on our training set
 p = predict.predict(theta, X)

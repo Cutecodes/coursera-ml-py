@@ -16,5 +16,12 @@ def cost_function_reg(theta, X, y, lmd):
 
 
     # ===========================================================
+    z= np.dot(X,theta)
+    theta2=theta**2
+    theta2[0]=theta[0]
+    cost = np.sum(-y*np.log(sigmoid(z))-(1-y)*np.log(1-sigmoid(z)))/m+np.sum(theta2)*lmd/2/m
+    dt = sigmoid(z)-y
+    grad = np.sum(X*np.array([dt for i in range(X.shape[1])]).T,axis=0)/m+lmd*theta/m
+    grad[0]-=lmd*theta[0]/m
 
     return cost, grad
