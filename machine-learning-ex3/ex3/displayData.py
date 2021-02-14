@@ -42,3 +42,4 @@ def display_data(x):
     plt.figure()
     plt.imshow(display_array, cmap='gray', extent=[-1, 1, -1, 1])
     plt.axis('off')
+    plt.pause(0.5)
